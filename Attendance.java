@@ -1,8 +1,29 @@
 import java.io.*;
-class Attendance
+
+abstract class Random
+{
+    public void display();         //abstraction
+}
+
+
+class Attendance extends Random     //Inheritance 
     {
+        @Override                  //annotation
+        public void display()
+        {
+            System.out.println("Hello,how may I help you?");
+        }    //display
+    }
+
+
+    class Attendance_Check
+    {
+
         public static void main(String args[])throws IOException
             {
+                Random obj=new Attendance();
+                obj.display();
+                
                 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
                 String sub[]={"PQT","MPMC","GER","APTI","POC","ADA","JAVA","PE","ADAL","JAVAL","MPMCL"};
                 int tot[]={48,37,24,26,38,33,37,30,26,24,24};
